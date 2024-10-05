@@ -38,6 +38,7 @@ def expand_numbers(text: str, *args, **kwargs):
 
 
 def phonemize_text(text: List[str] | str, *args, language="en-us", **kwargs):
+    if language == "vie": return text 
     return phonemize(text, language=language, backend="espeak", separator=separator, strip=True, preserve_punctuation=True, punctuation_marks=_preserved_symbols_re, with_stress=True, njobs=8)
 
 
